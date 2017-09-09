@@ -5,6 +5,22 @@ var SandwichMaker = (function(oldSandwich){
 	oldSandwich.getCheese = function(){
 		return cheese;
 	}
+
+	let cheeseArray = [];
+
+	//we need a function that pushes the selected cheese into the empty cheeseArray
+
+	oldSandwich.addToCheeseArray = function(selectedCheese){
+		cheeseArray.push(selectedCheese);
+		return cheeseArray;
+	}
+
+	//we need a function that shows the bread array as right now it is only existing within the Sandwich Maker function.
+
+	oldSandwich.showCheeseArray = function(){
+		return cheeseArray;
+	}
+
 	return oldSandwich;
 })(SandwichMaker || {});
 
