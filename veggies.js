@@ -20,7 +20,15 @@ var SandwichMaker = (function(oldSandwich){
 		return veggiesArray;
 	}
 
+	//we need a function that removes any ingredients that were unchecked
+
+	oldSandwich.removeUncheckedVeggies = function(strang){
+		veggiesArray.forEach(function(selectedVeggies, index){
+		if (selectedVeggies === strang){
+			veggiesArray.splice(index, 1)
+	}
+	console.log(veggiesArray);
+	});
+};
 	return oldSandwich;
 })(SandwichMaker || {});
-
-
