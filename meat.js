@@ -25,14 +25,13 @@ var SandwichMaker = (function(oldSandwich){
 
 	//we need a function that removes any ingredients that were unchecked
 
-	oldSandwich.removeUncheckedMeats = function(){
-		meatArray.forEach(function(selectedMeat, index){
-		if (selectedMeat.checked === false){
-			meatArray.splice(index, 1)
-	}
-}
+// 	oldSandwich.removeUncheckedMeats = function(){
+// 		meatArray.forEach(function(selectedMeat, index){
+// 		if (selectedMeat.checked === false){
+// 			meatArray.splice(index, 1)
+// 	}
+// }
 	return oldSandwich;
-		}
 })(SandwichMaker || {});
 
 
