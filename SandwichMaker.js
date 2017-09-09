@@ -1,5 +1,3 @@
-console.log("hello")
-
 
 // let theBread = SandwichMaker.getBread();
 // let theCheese = SandwichMaker.getCheese();
