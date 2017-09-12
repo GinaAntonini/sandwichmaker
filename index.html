@@ -2,11 +2,14 @@
 <html>
 <head>
 	<title>Sandwich Maker</title>
+	<h1>Welcome to So Happy Sandwich</h1>
+	<h2>"Our sandwich will make you so happy"</h2>
+	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-
+<div id="wrapper">
 <section id="breads">
-<h1>Choose a Bread</h1>
+<h3>Which type of bread would you like?</h3>
 <input type="checkbox" name="Wheat" value="Wheat">Wheat
 <input type="checkbox" name="White" value="White">White
 <input type="checkbox" name="Four Cheese" value="Four Cheese">Four Cheese
@@ -15,7 +18,7 @@
 </section>
 
 <section id="cheeses">
-<h1>Choose a Cheese</h1>
+<h3>Pick your cheese, if you please</h3>
 <input type="checkbox" name="Pepperjack" value="Pepperjack">Pepperjack
 <input type="checkbox" name="Cheddar" value="Cheddar">Cheddar
 <input type="checkbox" name="Gouda" value="Gouda">Gouda
@@ -24,7 +27,7 @@
 </section>
 
 <section id="condiments">
-<h1>Choose a Condiment</h1>
+<h3>Choose your condiments!</h3>
 <input type="checkbox" name="Ketchup" value="Ketchup">Ketchup
 <input type="checkbox" name="Mustard" value="Mustard">Mustard
 <input type="checkbox" name="Sriracha" value="Sriracha">Sriracha
@@ -33,7 +36,7 @@
 </section>
 
 <section id="meats">
-<h1>Choose a Meat</h1>
+<h3>Choose your meat!</h3>
 <input type="checkbox" name="Turkey" value="Turkey">Turkey
 <input type="checkbox" name="Pastor" value="Pastor">Pastor
 <input type="checkbox" name="Carnitas" value="Carnitas">Carnitas
@@ -42,7 +45,7 @@
 </section>
 
 <section id="veggies">
-<h1>Choose Veggies</h1>
+<h3>Don't forget the veggies</h3>
 <input type="checkbox" name="Lettuce" value="Lettuce">Lettuce
 <input type="checkbox" name="Onion" value="Onion">Onion
 <input type="checkbox" name="Green Peppers" value="Green Peppers">Green Peppers
@@ -50,9 +53,9 @@
 <input type="checkbox" name="Avocado" value="Avocado">Avocado
 </section>
 
-<button>Add It All Up</button>
-
-<div class="finalSandwichOrder">
+<button id="additionButton">Add It All Up</button>
+<div id="finalSandwichOrder">
+</div>
 </div>
 
 <script type="text/javascript" src="bread.js"></script>

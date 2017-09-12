@@ -1,38 +1,22 @@
 var SandwichMaker = (function(oldSandwich){
-	const meat = {"Turkey": 4.50, "Pastor": 7.00, "Carnitas": 3.50, "Steak": 2.50, "Chicken": 3.00};
+	const meat = {"Turkey": 4, "Pastor": 7, "Carnitas": 3, "Steak": 2, "Chicken": 3};
 
 	oldSandwich.getMeat = function(){
 		return meat;
 	}
-	//we need an empty array to hold the meats that have been checked
 
-	let meatArray = [];
-
-	//we need a function that pushes the selected meat into the empty meatArray
+	//we need a function that pushes the selected meat into the empty sandwich array
 
 	oldSandwich.addToMeatArray = function(selectedMeat){
-		meatArray.push(selectedMeat);
-		return meatArray;
+		return {name: selectedMeat, price: meat[selectedMeat]};
 	}
 
-	//we need a function that shows the meat array as right now it is only existing within the Sandwich Maker function.
+	//we need a function that returns the price of the selected condiments
 
-	oldSandwich.showMeatArray = function(){
-		return meatArray;
-	}
+	oldSandwich.getMeatPrice = function(name) {
+        return condiments[name];
+    }
 
-	//we need an event listener that makes the checkboxes work on the page...this is on the SandwichMaker.js file
-
-	//we need a function that removes any ingredients that were unchecked
-
-	oldSandwich.removeUncheckedMeats = function(strang){
-		meatArray.forEach(function(selectedMeat, index){
-		if (selectedMeat === strang){
-			meatArray.splice(index, 1)
-	}
-	console.log(meatArray);
-	});
-};
 	return oldSandwich;
 })(SandwichMaker || {});
 
