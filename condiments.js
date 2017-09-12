@@ -1,35 +1,22 @@
 var SandwichMaker = (function(oldSandwich){
-	const condiments = {"Ketchup": .05, "Mustard": .05, "Sriracha": .05, "Tzasiki": .10, "Relish": .05};
+	const condiments = {"Ketchup": 0, "Mustard": 0, "Sriracha": 0, "Tzasiki": 0, "Relish": 0};
 
 	oldSandwich.getCondiments = function(){
 		return condiments;
 	}
 
-	let condimentsArray = [];
-
-	//we need a function that pushes the selected condiments into the empty condimentsArray
+	//we need a function that pushes the selected condiments into the empty sandwich array
 
 	oldSandwich.addToCondimentsArray = function(selectedCondiments){
-		condimentsArray.push(selectedCondiments);
-		return condimentsArray;
+		return {name: selectedCondiments, price: condiments[selectedCondiments]};
 	}
 
-	//we need a function that shows the condiments array as right now it is only existing within the Sandwich Maker function.
+	//we need a function that returns the price of the selected condiments
 
-	oldSandwich.showCondimentsArray = function(){
-		return condimentsArray;
-	}
+	oldSandwich.getCondimentsPrice = function(name) {
+        return condiments[name];
+    }
 
-	//we need a function that removes any ingredients that were unchecked
-
-	oldSandwich.removeUncheckedCondiments = function(strang){
-		condimentsArray.forEach(function(selectedCondiments, index){
-		if (selectedCondiments === strang){
-			condimentsArray.splice(index, 1)
-	}
-	console.log(condimentsArray);
-	});
-};
 	return oldSandwich;
 })(SandwichMaker || {});
 

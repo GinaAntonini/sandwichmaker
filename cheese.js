@@ -1,35 +1,22 @@
 
 var SandwichMaker = (function(oldSandwich){
-	const cheese = {"Pepperjack": .75, "Cheddar": .75, "Gouda": 1.00, "Provologne": .85, "American": .50};
+	const cheese = {"Pepperjack": 1, "Cheddar": 1, "Gouda": 1, "Provologne": 1, "American": 1};
 
 	oldSandwich.getCheese = function(){
 		return cheese;
 	}
 
-	let cheeseArray = [];
-
-	//we need a function that pushes the selected cheese into the empty cheeseArray
+	//we need a function that pushes the selected cheese into the empty sandwich array
 
 	oldSandwich.addToCheeseArray = function(selectedCheese){
-		cheeseArray.push(selectedCheese);
-		return cheeseArray;
+		return {name: selectedCheese, price: cheese[selectedCheese]};
 	}
 
-	//we need a function that shows the bread array as right now it is only existing within the Sandwich Maker function.
+	//we need a function that returns the price of the selected bread
 
-	oldSandwich.showCheeseArray = function(){
-		return cheeseArray;
-	}
+	oldSandwich.getCheesePrice = function(name) {
+        
+    }
 
-	//we need a function that removes any ingredients that were unchecked
-
-	oldSandwich.removeUncheckedCheeses = function(strang){
-		cheeseArray.forEach(function(selectedCheese, index){
-		if (selectedCheese === strang){
-			cheeseArray.splice(index, 1)
-	}
-	console.log(cheeseArray);
-	});
-};
 	return oldSandwich;
 })(SandwichMaker || {});
