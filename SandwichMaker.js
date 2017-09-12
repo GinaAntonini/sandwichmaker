@@ -1,10 +1,3 @@
-
-let theBread = SandwichMaker.getBread();
-let theCheese = SandwichMaker.getCheese();
-let theCondiments = SandwichMaker.getCondiments();
-let theMeat = SandwichMaker.getMeat();
-let theVeggies = SandwichMaker.getVeggies();
-
 chooseBread = document.getElementById("breads");
 chooseCheese = document.getElementById("cheeses");
 chooseCondiments = document.getElementById("condiments");
@@ -21,7 +14,7 @@ chooseMeat.addEventListener("change", function(event){
 	if(event.target.checked === true) {
 		theWholeSandwich.push(SandwichMaker.addToMeatArray(event.target.value));
     } else {
-    	SandwichMaker.removeUncheckedIngredients(event.target.value);
+    	theWholeSandwich.pop(SandwichMaker.removeUncheckedIngredients(event.target.value));
     }
 });
 
@@ -31,7 +24,7 @@ chooseBread.addEventListener("change", function(event){
 	if(event.target.checked === true) {
 		theWholeSandwich.push(SandwichMaker.addToBreadArray(event.target.value));
     } else {
-    	SandwichMaker.removeUncheckedIngredients(event.target.value);
+    	theWholeSandwich.pop(SandwichMaker.removeUncheckedIngredients(event.target.value));
     }
 });
 
@@ -41,7 +34,7 @@ chooseCheese.addEventListener("change", function(event){
 	if(event.target.checked === true) {
 		theWholeSandwich.push(SandwichMaker.addToCheeseArray(event.target.value))
     } else {
-    	SandwichMaker.removeUncheckedIngredients(event.target.value);
+    	theWholeSandwich.pop(SandwichMaker.removeUncheckedIngredients(event.target.value));
     }
 });
 
@@ -51,7 +44,7 @@ chooseCondiments.addEventListener("change", function(event){
 	if(event.target.checked === true) {
 		theWholeSandwich.push(SandwichMaker.addToCondimentsArray(event.target.value))
     } else {
-    	SandwichMaker.removeUncheckedIngredients(event.target.value);
+    	theWholeSandwich.pop(SandwichMaker.removeUncheckedIngredients(event.target.value));
     }
 });
 
@@ -61,23 +54,16 @@ chooseVeggies.addEventListener("change", function(event){
 	if(event.target.checked === true) {
 		theWholeSandwich.push(SandwichMaker.addToVeggiesArray(event.target.value))
     } else {
-    	SandwichMaker.removeUncheckedIngredients(event.target.value);
+    	theWholeSandwich.pop(SandwichMaker.removeUncheckedIngredients(event.target.value));
     }
 });
-
-//we need a function to add all of the checked ingredients from different arrays into an empty array called theWholeSandwich
-SandwichMaker.addToSandwichArray = function(selectedIngredients){
-		theWholeSandwich.push(selectedIngredients);
-
-	}
 
 //we need a function to remove any ingredients that become unchecked
 SandwichMaker.removeUncheckedIngredients = function(strang){
 		theWholeSandwich.forEach(function(selectedIngredients, index){
 		if (selectedIngredients === strang){
-			theWholeSandwich.splice(index, 1)
+			theWholeSandwich.splice(index, 1);
 		}
-	// console.log(theWholeSandwich);
 	});
 	};
 
@@ -88,6 +74,7 @@ additionButton.addEventListener("click", function(event){
 theWholeSandwich.forEach(function(topping){
 	finalPrice += topping.price;
 	toppingList += topping.name + "<p></p> ";
+
 })
 	finishedSandwich.innerHTML = `<h4>Pay This Amount: $ ${finalPrice}</h4><p>Final Order:<p></p> ${toppingList}</p>`;
 });
